@@ -1,0 +1,1664 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>蔡涵宇 | 個人履歷與自我介紹</title>
+  <meta name="description" content="蔡涵宇的個人自我介紹與履歷網頁。熱愛畫畫、看電影與看小說，專注於寫生創作與簡約美學。">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================
+       CSS Variables & Reset
+       ========================================== */
+    :root {
+      --primary: #2563eb;         /* 湛藍主色 */
+      --primary-light: #60a5fa;   /* 淺藍 */
+      --primary-dark: #1d4ed8;    /* 深藍 */
+      --primary-subtle: #eff6ff;  /* 柔和藍底 */
+      --primary-glow: rgba(37, 99, 235, 0.18);
+      
+      --bg: #f8fafc;              /* 極簡極淡藍灰底 */
+      --surface: #ffffff;         /* 純白卡片底 */
+      --surface-glass: rgba(255, 255, 255, 0.85);
+      
+      --text-main: #0f172a;       /* 主要文字深墨灰 */
+      --text-muted: #64748b;      /* 次要文字 */
+      --text-light: #94a3b8;      /* 輔助細字 */
+      
+      --border: #e2e8f0;          /* 細微邊框 */
+      --border-hover: #cbd5e1;
+      
+      --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 10px 25px -4px rgba(15, 23, 42, 0.06), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+      --shadow-lg: 0 20px 30px -8px rgba(37, 99, 235, 0.12);
+      
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      
+      --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ==========================================
+       Navigation
+       ========================================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background: var(--surface-glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      transition: var(--transition-smooth);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: -0.5px;
+      color: var(--text-main);
+    }
+
+    .nav-brand .badge-dot {
+      width: 9px;
+      height: 9px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 10px var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: var(--transition-smooth);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition-smooth);
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-btn {
+      padding: 8px 18px;
+      background: var(--primary);
+      color: white !important;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+    }
+
+    .nav-btn::after {
+      display: none;
+    }
+
+    /* Mobile Hamburger Button */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      flex-direction: column;
+      gap: 5px;
+      z-index: 1001;
+    }
+
+    .mobile-menu-btn span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text-main);
+      border-radius: 2px;
+      transition: var(--transition-smooth);
+    }
+
+    .mobile-menu-btn.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ==========================================
+       Layout & Sections
+       ========================================== */
+    .container {
+      max-width: 1100px;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 90px 0;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: var(--primary-subtle);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.5px;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-top: 8px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ==========================================
+       Hero Section
+       ========================================== */
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+      position: relative;
+      background: radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.07) 0%, transparent 60%),
+                  radial-gradient(circle at 10% 80%, rgba(96, 165, 250, 0.05) 0%, transparent 50%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-tag {
+      background: var(--primary-subtle);
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(37, 99, 235, 0.15);
+      margin-bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-name {
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--text-main);
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .hero-name .highlight {
+      background: linear-gradient(135deg, var(--primary) 0%, #0284c7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .hero-subtitle {
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-subtitle-chip {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 3px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-bio {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 36px;
+      line-height: 1.8;
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 28px;
+      border-radius: var(--radius-full);
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: var(--transition-smooth);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.28);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn-outline {
+      background: var(--surface);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-subtle);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Visual Card */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .visual-card {
+      width: 100%;
+      max-width: 360px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .visual-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .avatar-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 4px solid #ffffff;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15);
+      color: var(--primary);
+      font-size: 2.8rem;
+    }
+
+    .avatar-badge {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #ffffff;
+      font-size: 0.85rem;
+    }
+
+    .visual-name {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .visual-role {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .visual-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .mini-tag {
+      font-size: 0.76rem;
+      background: var(--bg);
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+
+    .visual-status {
+      width: 100%;
+      padding-top: 18px;
+      border-top: 1px dashed var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #10b981;
+      font-weight: 500;
+    }
+
+    .status-indicator::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background: #10b981;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 6px #10b981;
+    }
+
+    /* Ambient decorative circle */
+    .ambient-glow {
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, rgba(37, 99, 235, 0) 70%);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      filter: blur(20px);
+    }
+
+    /* ==========================================
+       About Section
+       ========================================== */
+    .about-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    .about-quote {
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--text-main);
+      border-left: 4px solid var(--primary);
+      padding-left: 20px;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    .about-quote span {
+      color: var(--primary);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin-top: 36px;
+    }
+
+    .about-feature {
+      padding: 24px;
+      background: var(--bg);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      transition: var(--transition-smooth);
+    }
+
+    .about-feature:hover {
+      border-color: var(--primary-light);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--primary-subtle);
+      color: var(--primary);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .feature-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .feature-text {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ==========================================
+       Interests Section (3 Cards)
+       ========================================== */
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .interest-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      transition: var(--transition-smooth);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .interest-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--primary-light);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .interest-number {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .interest-icon-box {
+      width: 58px;
+      height: 58px;
+      border-radius: var(--radius-md);
+      background: var(--primary-subtle);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 22px;
+      transition: var(--transition-smooth);
+    }
+
+    .interest-card:hover .interest-icon-box {
+      background: var(--primary);
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+
+    .interest-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+
+    .interest-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .interest-footer {
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* ==========================================
+       Skill & Growth Section
+       ========================================== */
+    .skill-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 44px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .skill-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .skill-info h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 14px;
+    }
+
+    .skill-badge {
+      display: inline-block;
+      background: var(--primary-subtle);
+      color: var(--primary);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .skill-info p {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .skill-tags-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-chip {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 7px 16px;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition-smooth);
+    }
+
+    .skill-chip:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-subtle);
+    }
+
+    .skill-progress-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .progress-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 8px;
+      background: var(--bg);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-radius: var(--radius-full);
+      transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      width: 0%;
+    }
+
+    /* ==========================================
+       Works & Plein Air Activity Section
+       ========================================== */
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .work-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .work-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--border-hover);
+    }
+
+    .work-visual {
+      height: 220px;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .art-canvas {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Canvas decorative art styling */
+    .art-landscape-1 {
+      background: linear-gradient(180deg, #1e3a8a 0%, #3b82f6 45%, #93c5fd 65%, #64748b 80%, #334155 100%);
+    }
+
+    .art-landscape-2 {
+      background: linear-gradient(180deg, #0f172a 0%, #1e40af 50%, #60a5fa 75%, #475569 90%, #1e293b 100%);
+    }
+
+    .art-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.2);
+      backdrop-filter: blur(1px);
+    }
+
+    .art-badge-top {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      color: var(--primary-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 2;
+    }
+
+    .art-center-icon {
+      z-index: 2;
+      color: #ffffff;
+      opacity: 0.9;
+      transform: scale(1);
+      transition: var(--transition-smooth);
+    }
+
+    .work-card:hover .art-center-icon {
+      transform: scale(1.15);
+    }
+
+    .work-body {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .work-title {
+      font-size: 1.28rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .work-meta {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .work-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .work-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .work-tag {
+      font-size: 0.76rem;
+      background: var(--primary-subtle);
+      color: var(--primary);
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+    }
+
+    .work-footer {
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* ==========================================
+       Contact & Philosophy Banner
+       ========================================== */
+    .contact-card {
+      background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+      border-radius: var(--radius-lg);
+      padding: 56px 48px;
+      color: #ffffff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .contact-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+
+    .contact-subtitle {
+      font-size: 1.05rem;
+      opacity: 0.9;
+      max-width: 540px;
+      margin: 0 auto 32px auto;
+      line-height: 1.7;
+    }
+
+    .contact-chips {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .contact-chip-item {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 10px 22px;
+      border-radius: var(--radius-full);
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition-smooth);
+    }
+
+    .contact-chip-item:hover {
+      background: #ffffff;
+      color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================
+       Footer
+       ========================================== */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.88rem;
+      background: var(--surface);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* ==========================================
+       Scroll Fade-In Animation Rules
+       ========================================== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered delay helpers */
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+
+    /* ==========================================
+       Mobile Responsive Styles
+       ========================================== */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+      }
+
+      .hero-content {
+        align-items: center;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .skill-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .interests-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .works-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 64px 0;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .mobile-menu-btn {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        flex-direction: column;
+        padding: 24px 20px;
+        gap: 18px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
+        transform: translateY(-120%);
+        opacity: 0;
+        pointer-events: none;
+        transition: var(--transition-smooth);
+        display: flex;
+      }
+
+      .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .nav-links .nav-link {
+        font-size: 1.05rem;
+        padding: 4px 0;
+      }
+
+      .about-card {
+        padding: 30px 20px;
+      }
+
+      .skill-card {
+        padding: 30px 20px;
+      }
+
+      .contact-card {
+        padding: 40px 24px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       Navigation Bar
+       ========================================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-brand">
+        <span class="badge-dot"></span>
+        <span>蔡涵宇</span>
+      </a>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="切換選單">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">關於我</a></li>
+        <li><a href="#interests" class="nav-link">興趣喜好</a></li>
+        <li><a href="#skills" class="nav-link">擅長技能</a></li>
+        <li><a href="#works" class="nav-link">寫生歷程</a></li>
+        <li><a href="#contact" class="nav-btn">聯絡交流</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==========================================
+       Hero Section
+       ========================================== -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content fade-in">
+        <div class="hero-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          簡約風格・個人簡介
+        </div>
+
+        <h1 class="hero-name">
+          你好，我是<br>
+          <span class="highlight">蔡涵宇</span>
+        </h1>
+
+        <div class="hero-subtitle">
+          一句話介紹：
+          <span class="hero-subtitle-chip">生物</span>
+        </div>
+
+        <p class="hero-bio">
+          作為一個感知自然與光影的「生物」，喜歡以極簡的純粹視角凝視日常。藉由畫筆捕捉大自然瞬息萬變的光線，在電影的分鏡與小說的文字中漫遊探索。
+        </p>
+
+        <div class="hero-actions">
+          <a href="#works" class="btn btn-primary">
+            <span>探索寫生作品</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#about" class="btn btn-outline">認識更多</a>
+        </div>
+      </div>
+
+      <div class="hero-visual fade-in delay-1">
+        <div class="ambient-glow"></div>
+        <div class="visual-card">
+          <div class="avatar-wrapper">
+            <div class="avatar-circle">
+              <!-- Minimalist artistic portrait icon -->
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div class="avatar-badge" title="繪畫創作中">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                <path d="M2 2l7.586 7.586"></path>
+                <circle cx="11" cy="11" r="2"></circle>
+              </svg>
+            </div>
+          </div>
+
+          <h2 class="visual-name">蔡涵宇</h2>
+          <p class="visual-role">創作者・寫生愛好者</p>
+
+          <div class="visual-tags">
+            <span class="mini-tag">🎨 畫畫創作</span>
+            <span class="mini-tag">🎬 喜愛電影</span>
+            <span class="mini-tag">📖 漫遊小說</span>
+            <span class="mini-tag">🌿 簡約生活</span>
+          </div>
+
+          <div class="visual-status">
+            <span>目前狀態</span>
+            <span class="status-indicator">觀察與寫生創作中</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       About Me Section
+       ========================================== -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">關於蔡涵宇</h2>
+        <p class="section-desc">除去繁複的標籤，回歸最真實純粹的生活本質。</p>
+      </div>
+
+      <div class="about-card fade-in">
+        <div class="about-quote">
+          「以「<span>生物</span>」之眼靜觀萬物，以簡約之筆勾勒生命姿態。」
+        </div>
+        <p style="color: var(--text-muted); font-size: 1.02rem; line-height: 1.8;">
+          在這個訊息紛擾的世界裡，我給自己的定義很純粹——就是一個「生物」。保持對呼吸、光影、微風與色彩的本能感知。崇尚簡約美學，相信減去多餘的裝飾後，留下來的線條與情感才最為深刻。
+        </p>
+
+        <div class="about-grid">
+          <div class="about-feature">
+            <div class="feature-icon">🌿</div>
+            <h3 class="feature-title">簡約哲學</h3>
+            <p class="feature-text">喜愛簡約乾淨的視覺與生活步調，不盲從繁瑣，在留白中發現更多可能性。</p>
+          </div>
+
+          <div class="about-feature">
+            <div class="feature-icon">👁️</div>
+            <h3 class="feature-title">敏銳觀察</h3>
+            <p class="feature-text">將自己視為自然界的一分子，善於觀察日常細微的光影變化與情感流動。</p>
+          </div>
+
+          <div class="about-feature">
+            <div class="feature-icon">🖌️</div>
+            <h3 class="feature-title">實踐與手繪</h3>
+            <p class="feature-text">走出室內走入自然，透過現場寫生體驗大自然的呼吸，鍛鍊眼力與畫藝。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Interests Section
+       ========================================== -->
+  <section id="interests" style="background: rgba(241, 245, 249, 0.5);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Interests</span>
+        <h2 class="section-title">生活與三大興趣</h2>
+        <p class="section-desc">構築日常精神世界的三個錨點：畫筆、光影鏡頭與文字宇宙。</p>
+      </div>
+
+      <div class="interests-grid">
+        <!-- Card 1: 畫畫 -->
+        <article class="interest-card fade-in delay-1">
+          <div class="interest-number">01 / ART & DRAWING</div>
+          <div class="interest-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+              <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+              <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+              <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.563-2.512 5.563-5.563C22 6.5 17.5 2 12 2z"></path>
+            </svg>
+          </div>
+          <h3 class="interest-title">畫畫</h3>
+          <p class="interest-desc">
+            畫筆是我表達內心最直覺的媒介。無論是隨手速寫、線條描繪，或是色彩的堆疊嘗試，都能讓心靈回到專注與寧靜的平衡。
+          </p>
+          <div class="interest-footer">
+            <span>探索視覺與形體</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </article>
+
+        <!-- Card 2: 看電影 -->
+        <article class="interest-card fade-in delay-2">
+          <div class="interest-number">02 / CINEMA & MOVIES</div>
+          <div class="interest-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+              <line x1="7" y1="2" x2="7" y2="22"></line>
+              <line x1="17" y1="2" x2="17" y2="22"></line>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <line x1="2" y1="7" x2="7" y2="7"></line>
+              <line x1="2" y1="17" x2="7" y2="17"></line>
+              <line x1="17" y1="17" x2="22" y2="17"></line>
+              <line x1="17" y1="7" x2="22" y2="7"></line>
+            </svg>
+          </div>
+          <h3 class="interest-title">看電影</h3>
+          <p class="interest-desc">
+            著迷於導演對色調的運用、鏡頭的構圖，以及角色之間細膩的情感鋪陳。每一部電影都是一場透過他人視野展開的沉浸式冒險。
+          </p>
+          <div class="interest-footer">
+            <span>光影美學與敘事</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </article>
+
+        <!-- Card 3: 看小說 -->
+        <article class="interest-card fade-in delay-3">
+          <div class="interest-number">03 / LITERATURE & NOVELS</div>
+          <div class="interest-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+          <h3 class="interest-title">看小說</h3>
+          <p class="interest-desc">
+            沉浸於文字所搭建的世界。小說給予讀者無限的想像留白，在字裡行間激盪靈感，也為往後的繪畫創作提供了豐富的情感底蘊。
+          </p>
+          <div class="interest-footer">
+            <span>文字思考與想像</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Skills & Growth Section
+       ========================================== -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Skills & Learning</span>
+        <h2 class="section-title">擅長與鑽研技能</h2>
+        <p class="section-desc">將熱情化為筆尖的硬實力，持續精進繪畫視野。</p>
+      </div>
+
+      <div class="skill-card fade-in">
+        <div class="skill-layout">
+          <div class="skill-info">
+            <span class="skill-badge">核心專注領域</span>
+            <h3>畫畫 (Drawing & Painting)</h3>
+            <p>
+              無論是日常素描速寫，或是持續探索的戶外寫生與色彩構成，畫畫是我持續深耕、也是最有熱情不斷學習的核心技能。我享受觀察實物結構、光影漸層與簡約造型的過程。
+            </p>
+
+            <div class="skill-tags-group">
+              <span class="skill-chip">✏️ 鉛筆與線條素描</span>
+              <span class="skill-chip">🏞️ 戶外風景寫生</span>
+              <span class="skill-chip">🎨 簡約色彩調和</span>
+              <span class="skill-chip">📐 觀察透視與構圖</span>
+              <span class="skill-chip">💡 光影明暗捕捉</span>
+            </div>
+          </div>
+
+          <div class="skill-progress-container">
+            <div class="progress-item">
+              <div class="progress-header">
+                <span>戶外寫生與自然觀察</span>
+                <span>88%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-bar" data-progress="88%"></div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-header">
+                <span>線條構圖與手繪速寫</span>
+                <span>85%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-bar" data-progress="85%"></div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-header">
+                <span>色彩感受與簡約氛圍營造</span>
+                <span>80%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-bar" data-progress="80%"></div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-header">
+                <span>持續探索中的新技法與風格</span>
+                <span>75%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-bar" data-progress="75%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Works & Activities (寫生歷程)
+       ========================================== -->
+  <section id="works" style="background: rgba(241, 245, 249, 0.5);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Works & Experience</span>
+        <h2 class="section-title">活動歷程・寫生記行</h2>
+        <p class="section-desc">走出室內，在天地之間架起畫板，記錄真實的光色呼吸。</p>
+      </div>
+
+      <div class="works-grid">
+        <!-- Work 1 -->
+        <article class="work-card fade-in delay-1">
+          <div class="work-visual">
+            <div class="art-canvas art-landscape-1">
+              <div class="art-overlay"></div>
+              <div class="art-badge-top">戶外實踐</div>
+              <div class="art-center-icon">
+                <svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8 3l4 8 5-5 5 15H2L8 3z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="work-body">
+            <h3 class="work-title">自然寫生・捕捉日光與樹影</h3>
+            <div class="work-meta">
+              <span>實地寫生活動</span>
+              <span>•</span>
+              <span>自然景致紀錄</span>
+            </div>
+            <p class="work-desc">
+              背著畫袋走進林蔭與開闊山水，在有限的時間內捕捉隨著陽光快速轉移的陰影邊界。寫生鍛鍊了對景物去蕪存菁的取捨能力，與大自然合奏出最純樸的畫幅。
+            </p>
+            <div class="work-highlights">
+              <span class="work-tag">現場速寫</span>
+              <span class="work-tag">光影捕捉</span>
+              <span class="work-tag">簡潔構圖</span>
+            </div>
+            <div class="work-footer">
+              <span>探索寫生體會</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </div>
+          </div>
+        </article>
+
+        <!-- Work 2 -->
+        <article class="work-card fade-in delay-2">
+          <div class="work-visual">
+            <div class="art-canvas art-landscape-2">
+              <div class="art-overlay"></div>
+              <div class="art-badge-top">視角探索</div>
+              <div class="art-center-icon">
+                <svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="work-body">
+            <h3 class="work-title">城市角落速寫・日常建築觀察</h3>
+            <div class="work-meta">
+              <span>街頭寫生實踐</span>
+              <span>•</span>
+              <span>空間透視練習</span>
+            </div>
+            <p class="work-desc">
+              在街角安靜的一隅，以「生物」的冷靜視角觀察都市節奏。透過簡約洗鍊的線條，勾勒出巷弄老屋與藍天相遇的角度，將熙攘的片刻凝結為紙上的永恆。
+            </p>
+            <div class="work-highlights">
+              <span class="work-tag">建築結構</span>
+              <span class="work-tag">透視手繪</span>
+              <span class="work-tag">極簡生活</span>
+            </div>
+            <div class="work-footer">
+              <span>閱讀街頭筆記</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Contact / Philosophy Banner
+       ========================================== -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-card fade-in">
+        <h2 class="contact-title">保持觀察，持續描繪</h2>
+        <p class="contact-subtitle">
+          「身為一個生物，最幸運的事就是能透過眼睛看見世界的美，並透過雙手將感動留在畫布上。」
+        </p>
+
+        <div class="contact-chips">
+          <div class="contact-chip-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>交流與寫生同好歡迎聯繫</span>
+          </div>
+          <div class="contact-chip-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span>簡約美學・持續創作中</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Footer
+       ========================================== -->
+  <footer>
+    <div class="container footer-content">
+      <div>
+        © 2026 <strong>蔡涵宇</strong>. 版權所有・簡約個人履歷
+      </div>
+      <div style="display: flex; gap: 20px; justify-content: center;">
+        <span>以藍為底</span>
+        <span>•</span>
+        <span>以生物自居</span>
+        <span>•</span>
+        <span>一生愛畫</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       JavaScript for Scroll Animation & Dynamic Effects
+       ========================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const navLinks = document.getElementById('navLinks');
+      
+      if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+          mobileMenuBtn.classList.toggle('active');
+          navLinks.classList.toggle('active');
+        });
+
+        // Close menu on clicking any navigation link
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenuBtn.classList.remove('active');
+            navLinks.classList.remove('active');
+          });
+        });
+      }
+
+      // 2. Scroll Fade-In Observer & Animation
+      const fadeElements = document.querySelectorAll('.fade-in');
+      
+      const triggerElement = (el) => {
+        el.classList.add('visible');
+        const progressBars = el.querySelectorAll('.progress-bar');
+        progressBars.forEach(bar => {
+          const targetWidth = bar.getAttribute('data-progress');
+          if (targetWidth) {
+            bar.style.width = targetWidth;
+          }
+        });
+      };
+
+      if ('IntersectionObserver' in window) {
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px 0px -40px 0px',
+          threshold: 0.1
+        };
+
+        const fadeObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              triggerElement(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        fadeElements.forEach(el => fadeObserver.observe(el));
+      } else {
+        // Fallback for older browsers
+        fadeElements.forEach(el => triggerElement(el));
+      }
+
+      // Initial check for elements already in viewport
+      setTimeout(() => {
+        fadeElements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 30) {
+            triggerElement(el);
+          }
+        });
+      }, 50);
+
+      // 3. Navbar elevation on scroll
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 30) {
+          navbar.style.boxShadow = '0 10px 30px -10px rgba(15, 23, 42, 0.08)';
+          navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        } else {
+          navbar.style.boxShadow = 'none';
+          navbar.style.background = 'rgba(255, 255, 255, 0.85)';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
